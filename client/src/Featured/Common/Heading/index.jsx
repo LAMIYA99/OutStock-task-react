@@ -9,7 +9,7 @@ const HeadingText = ({ title, desc }) => {
           <h2 className="text-[36px] leading-[36px] font-normal text-[#201f1f] mb-[10px]">
             {title}
           </h2>
-          <p className="text-[14px] font-normal leading-[1.715] text-[#606060] max-w-[570px]">
+          <p className="text-[14px] font-normal mt-2 leading-[1.715] text-[#6C6C6C] max-w-[570px]">
             {desc}
           </p>
         </div>
