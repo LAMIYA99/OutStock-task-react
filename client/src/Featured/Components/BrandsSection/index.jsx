@@ -37,7 +37,7 @@ const BrandSection = () => {
   ];
 
   return (
-    <section className="max-w-[1320px] mx-auto px-[10px] bg-[#FFFFFF]  relative">
+    <section className="max-w-[1320px] mx-auto px-[10px] bg-[#FFFFFF] mt-[200px] relative">
       <Swiper
         className="mySwiper relative"
         spaceBetween={20}

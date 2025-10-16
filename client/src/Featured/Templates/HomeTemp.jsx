@@ -3,6 +3,7 @@ import BlogSection from "../Components/BlogSection";
 import BrandSection from "../Components/BrandsSection";
 import BuyNowSection from "../Components/BuyNowSection";
 import DiscountSection from "../Components/DiscountSection";
+import SaleOfSection from "../Components/SaleOfSection";
 import TrendsSection from "../Components/TrendsSection";
 
 const HomeTemp = () => {
@@ -11,9 +12,11 @@ const HomeTemp = () => {
       <BannerSection />
       <TrendsSection />
       <BuyNowSection />
+      <SaleOfSection/>
       <BrandSection/>
       <BlogSection/>
       <DiscountSection/>
+      
     </div>
   );
 };
