@@ -9,6 +9,7 @@ import TrendsSection from "../Components/TrendsSection";
 const HomeTemp = () => {
   return (
     <div>
+      
       <BannerSection />
       <TrendsSection />
       <BuyNowSection />

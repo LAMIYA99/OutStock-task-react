@@ -1,38 +1,67 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const BannerSection = () => {
+  const elementsRef = useRef([]);
+
+  useEffect(() => {
+    // Əvvəlcə hər şeyi yuxarıda və şəffaf vəziyyətdə başlat
+    gsap.set(elementsRef.current, { y: -100, opacity: 0 });
+
+    // Sonra ardıcıl şəkildə aşağıya doğru gətir
+    gsap.to(elementsRef.current, {
+      y: 0,
+      opacity: 1,
+      duration: 0.9,
+      ease: "power2.out",
+      stagger: 0.45, // elementlər 0.25s fərqlə ardıcıl gələcək
+    });
+  }, []);
+
   return (
     <div className=" bg-[#F6F6F6]  h-[750px] mb-[180px]">
       <div className="mx-auto px-[10px] max-w-[1320px]  ">
         <Swiper className="mySwiper relative">
           <SwiperSlide className="">
             <div
-              className="w-full  bg-no-repeat bg-cover h-[600px]  flex items-center justify-start"
+              className="w-full  bg-no-repeat bg-cover h-[700px]  flex items-center justify-start"
               style={{
                 backgroundImage:
                   "url('https://vela-kazan.myshopify.com/cdn/shop/files/h1-slide1.jpg?v=1691976327')",
               }}
             >
               <div className="flex items-start flex-col justify-center">
-                <h2 className="text-[#323232] font-semibold text-[30px] text-left leading-[1] mb-[25px]">
-                  Handmade <br /> Hand Carved Coffee
-                </h2>
-                <p className="max-w-[650px] text-left text-[#323232] text-[14px] font-normal leading-[1.715] mb-[40px]">
-                  As rich and unique as the coffee beans it is intended for,
-                  this little scoop will make your morning ritual a special
-                  occasion every day.
-                </p>
-                <button className="text-[#323232] uppercase bg-transparent hover:bg-[#BC8246] cursor-pointer hover:border-[#BC8246] duration-300 hover:text-white border-[#323232] border-2 text-[14px] py-[15px] px-[40px] font-semibold">
-                  Discover Now
-                </button>
+              <h2
+        ref={(el) => (elementsRef.current[0] = el)}
+        className="text-[#323232] font-semibold text-[30px] text-left leading-[1] mb-[25px]"
+      >
+        Handmade <br /> Hand Carved Coffee
+      </h2>
+
+      <p
+        ref={(el) => (elementsRef.current[1] = el)}
+        className="max-w-[650px] text-left text-[#323232] text-[14px] font-normal leading-[1.715] mb-[40px]"
+      >
+        As rich and unique as the coffee beans it is intended for,
+        this little scoop will make your morning ritual a special
+        occasion every day.
+      </p>
+
+      <button
+        ref={(el) => (elementsRef.current[2] = el)}
+        className="text-[#323232] uppercase bg-transparent hover:bg-[#BC8246] cursor-pointer hover:border-[#BC8246] duration-300 hover:text-white border-[#323232] border-2 text-[14px] py-[15px] px-[40px] font-semibold"
+      >
+        Discover Now
+      </button>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div
-              className="w-full  bg-no-repeat bg-cover  h-[600px] max-h-[100vh] flex items-center justify-start"
+              className="w-full  bg-no-repeat bg-cover  h-[700px] max-h-[100vh] flex items-center justify-start"
               style={{
                 backgroundImage:
                   "url('https://vela-kazan.myshopify.com/cdn/shop/files/h1-slide3.jpg?v=1691976328')",
@@ -55,7 +84,7 @@ const BannerSection = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div
-              className="w-full  bg-no-repeat bg-cover h-[600px] max-h-[100vh] flex items-center justify-start"
+              className="w-full  bg-no-repeat bg-cover h-[700px] max-h-[100vh] flex items-center justify-start"
               style={{
                 backgroundImage:
                   "url('https://vela-kazan.myshopify.com/cdn/shop/files/h1-slide2.jpg?v=1691976327')",
