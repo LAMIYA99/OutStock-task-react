@@ -6,7 +6,7 @@ const Modal = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 2000);
+    }, 3000);
 
     return () => clearTimeout(timer); 
   }, []);

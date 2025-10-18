@@ -4,9 +4,10 @@ import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loading from "../Featured/Common/Loading";
 import Modal from "../Featured/Components/Modal";
-import { Home } from "lucide-react";
+
 import ToTop from "../Featured/Common/ToTop";
 import ProductModal from "../Featured/Common/ProductModal";
+
 
 const Layout = () => {
   const [loading, setLoading] = useState(true);
@@ -14,7 +15,7 @@ const Layout = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -27,7 +28,7 @@ const Layout = () => {
         !loading&&(
           <>
           <Modal />
-          <Home />
+   
           <ToTop />
           <ProductModal />
                           </>
