@@ -37,21 +37,27 @@ const BrandSection = () => {
   ];
 
   return (
-    <section className="max-w-[1320px] mx-auto px-[10px] bg-[#FFFFFF] mt-[200px] relative">
+    <section className="max-w-[1320px] mx-auto px-[10px] bg-[#FFFFFF] py-30 mt-[80px] relative">
       <Swiper
-        className="mySwiper relative"
-        spaceBetween={20}
-        slidesPerView={5}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        navigation={{
-          nextEl: ".swiper-button-next-custom",
-          prevEl: ".swiper-button-prev-custom",
-        }}
-        modules={[Navigation, Autoplay]}
+  className="mySwiper relative"
+  spaceBetween={20}
+  loop={true}
+  autoplay={{
+    delay: 2500,
+    disableOnInteraction: false,
+  }}
+  navigation={{
+    nextEl: ".swiper-button-next-custom",
+    prevEl: ".swiper-button-prev-custom",
+  }}
+  modules={[Navigation, Autoplay]}
+  breakpoints={{
+    320: { slidesPerView: 1, spaceBetween: 10 },
+    480: { slidesPerView: 2, spaceBetween: 15 },
+    640: { slidesPerView: 3, spaceBetween: 20 },
+    1024: { slidesPerView: 4, spaceBetween: 20 },
+    1280: { slidesPerView: 5, spaceBetween: 20 },
+  }}
       >
         {logos.map((logo, index) => (
           <SwiperSlide key={index}>
